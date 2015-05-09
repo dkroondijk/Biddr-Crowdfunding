@@ -1,0 +1,12 @@
+<h1>Auction Page</h1>
+
+<h3><%= @auction.title %></h3>
+<p>Details: <%= @auction.details %></p>
+<p>Auction Ends On: <%= @auction.ends_on.strftime("%Y-%b-%d") %></p>
+<p>Reserve Price: <%= number_to_currency(@auction.reserve_price) %></p>
+<p>Current Price: <%= number_to_currency(@auction.current_price) %></p>
+
+<%= simple_form_for [@auction, @bid] do |f| %>
+  <%= f.input :bid_price %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Welcome to Biddr</h1>
+<h3>Please Sign In</h3>
+
+<%= simple_form_for "", url: sessions_path, method: :post do |f| %>
+  <%= f.input :email, class: "form-control" %>
+  <%= f.input :password, class: "form-control" %>
+  <%= f.submit "Sign In" %>
+<% end %>
+<br>
+<%= link_to "Register", new_user_path %>

@@ -1,0 +1,10 @@
+<h1>All Auctions</h1>
+
+<%= link_to "Create New Auction", new_auction_path, class: "btn btn-primary" %>
+
+<div>
+  <% @auctions.each do |auction| %>
+    <div class="well"><%= link_to auction.title, auction_path(auction) %></div>
+  <% end %>
+</div>
+  
