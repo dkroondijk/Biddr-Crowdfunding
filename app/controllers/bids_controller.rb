@@ -10,12 +10,8 @@ class BidsController < ApplicationController
 
     if @bids != []
       if @bid.bid_price > @bids.last.bid_price
-        if @bid.save
-          redirect_to auction_path(@auction), notice: "Bid Placed"
-        else
-          render "auctions/show"
-          flash[:alert] = "Could not place bid!"
-        end
+        @bid.save
+        redirect_to auction_path(@auction), notice: "Bid Placed"
       else
         render "auctions/show"
         flash[:alert] = "Could not place bid!"
